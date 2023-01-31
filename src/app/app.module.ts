@@ -3,7 +3,6 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {AppRoutingModule} from './app-routing.module';
 
 import {AccordionModule} from 'primeng/accordion';
@@ -93,7 +92,6 @@ import {PetaniService} from './demo/service/petaniservice';
 import {EventService} from './demo/service/eventservice';
 import {IconService} from './demo/service/iconservice';
 import {NodeService} from './demo/service/nodeservice';
-import {PhotoService} from './demo/service/photoservice';
 import {BreadcrumbService} from './app.breadcrumb.service';
 import {MenuService} from './app.menu.service';
 import {ConfirmationService, MessageService} from 'primeng/api';
@@ -188,9 +186,7 @@ import {ConfirmationService, MessageService} from 'primeng/api';
         AppLoginComponent
     ],
     providers: [
-        {provide: LocationStrategy, useClass: HashLocationStrategy},
-        PetaniService, EventService, IconService, NodeService,
-        PhotoService, MenuService, BreadcrumbService, ConfirmationService, MessageService
+        PetaniService, EventService, IconService, NodeService, MenuService, BreadcrumbService, ConfirmationService, MessageService
     ],
     bootstrap: [AppComponent]
 })
