@@ -1,8 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ConfirmationService, MessageService} from 'primeng/api';
-import {ProductService} from '../service/productservice';
 import {BreadcrumbService} from '../../app.breadcrumb.service';
-import { CustomerService } from '../service/customerservice';
 import { Petani } from '../domain/petani';
 import { Table } from 'primeng/table';
 import { PetaniService } from '../service/petaniservice';
@@ -29,7 +27,7 @@ export class DashboardDemoComponent implements OnInit {
     display: boolean = false;
 
     status: Status[];
-    constructor( private messageService:MessageService, private confirmationService: ConfirmationService, private petaniService: PetaniService , private customerService: CustomerService, private productService: ProductService, private breadcrumbService: BreadcrumbService) {
+    constructor( private messageService:MessageService, private confirmationService: ConfirmationService, private petaniService: PetaniService , private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
             {label: 'Dashboard', routerLink: ['/']}
         ]);
