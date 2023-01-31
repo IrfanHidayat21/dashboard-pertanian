@@ -1,0 +1,33 @@
+<div class="layout-topbar">
+    <div class="topbar-left">
+        <a tabindex="0" class="menu-button" (click)="app.onMenuButtonClick($event)">
+            <i class="pi pi-chevron-left"></i>
+        </a>
+        <span class="topbar-separator"></span>
+        <ng-template ngFor let-item let-last="last" [ngForOf]="items">
+            <span class="viewname" style="text-transform: uppercase">{{item.label}}</span>
+        </ng-template>
+        <img id="logo-mobile" class="mobile-logo" src="assets/layout/images/logo-dark.svg" alt="diamond-layout" />
+    </div>
+
+    <div class="topbar-right">
+        <ul class="topbar-menu">
+
+
+            <li class="profile-item" [ngClass]="{'active-menuitem fadeInDown': app.topbarUserMenuActive}">
+                <a href="#" (click)="app.onTopbarUserMenuButtonClick($event)">
+                    <img src="assets/demo/images/avatar/profile.jpg" alt="diamond-layout" class="profile-image"/>
+                    <span class="profile-name">{{admin.email}}</span>
+                </a>
+                <ul class="profile-menu fade-in-up">
+                    <li>
+                        <a href="#" (click)="logout()">
+                            <i class="pi pi-power-off"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

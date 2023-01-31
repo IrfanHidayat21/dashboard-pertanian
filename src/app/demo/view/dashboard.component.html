@@ -1,0 +1,163 @@
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+<div class="layout-dashboard">
+	<div class="p-grid">
+		<div class="p-col-12 p-md-3">
+			<div class="card no-gutter widget-overview-box widget-overview-box-1">
+                            <span class="overview-icon">
+                                <i class="pi pi-users"></i>
+                            </span>
+				<span class="overview-title">Jumlah Pengajuan</span>
+				<div class="p-grid overview-detail">
+					<div class="p-col-12">
+						<div class="overview-number">{{petani.length}} Orang</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="p-col-12 p-md-3">
+			<div class="card no-gutter widget-overview-box widget-overview-box-3">
+                            <span class="overview-icon">
+                                <i class="pi pi-check"></i>
+                            </span>
+				<span class="overview-title">Klaim Diterima</span>
+				<div class="p-grid overview-detail">
+					<div class="p-col-12">
+						<div class="overview-number">{{petaniDiterima.length}} Orang</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="p-col-12 p-md-3">
+			<div class="card no-gutter widget-overview-box widget-overview-box-2">
+                            <span class="overview-icon">
+                                <i class="pi pi-times"></i>
+                            </span>
+				<span class="overview-title">Klaim Ditolak</span>
+				<div class="p-grid overview-detail">
+					<div class="p-col-12">
+						<div class="overview-number">{{petaniDitolak.length}} Orang</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="p-col-12 p-md-3">
+			<div class="card no-gutter widget-overview-box widget-overview-box-4">
+                            <span class="overview-icon">
+                                <i class="pi pi-replay"></i>
+                            </span>
+				<span class="overview-title">Belum Divalidasi</span>
+				<div class="p-grid overview-detail">
+					<div class="p-col-12">
+						<div class="overview-number">{{petaniDiproses.length}} Orang</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="p-grid table-demo">
+
+		<div class="p-col-12">
+			<div class="card">
+				<h4>DAFTAR PETANI</h4>
+				<p>berikut daftar petani yang telah mengajukan klaim asuransi</p>
+	
+				<p-table #dtc [value]="petani" [(selection)]="selectedPetani" dataKey="id" selectionMode="single" [scrollable]="true" scrollDirection="both"
+						 styleClass="p-datatable-customers p-datatable-gridlines p-datatable-striped p-datatable-sm"
+					 scrollHeight="600px" [filterDelay]="0" [globalFilterFields]="['nama','nik','email','status']">
+					<ng-template pTemplate="caption">
+						<div class="table-header">
+							Daftar Pengajuan Klaim Asuransi
+							<span class="p-input-icon-left">
+						<i class="pi pi-search"></i>
+						<input pInputText type="text" (input)="dtc.filterGlobal($event.target.value, 'contains')"
+							   placeholder="Cari data.."/>
+					</span>
+						</div>
+					</ng-template>
+					<ng-template pTemplate="header">
+						<tr>
+							<th pSortableColumn="nama">Nama
+								<p-sortIcon field="nama"></p-sortIcon>
+							</th>
+							<th pSortableColumn="nik">NIK
+								<p-sortIcon field="nik"></p-sortIcon>
+							</th>
+							<th pSortableColumn="email">Email
+								<p-sortIcon field="email"></p-sortIcon>
+							</th>
+							<th pSortableColumn="alamat">Alamat
+								<p-sortIcon field="alamat"></p-sortIcon>
+							</th>
+							<th style="width: 9rem" pSortableColumn="noHp">No Hp
+								<p-sortIcon field="noHp"></p-sortIcon>
+							</th>
+							<th style="width: 8rem" pSortableColumn="penghasilan">Penghasilan
+								<p-sortIcon field="penghasilan"></p-sortIcon>
+							</th>
+							<th style="width: 8rem" pSortableColumn="jenisKlaim">Jenis Klaim
+								<p-sortIcon field="jenisKlaim"></p-sortIcon>
+							</th>
+							<th style="width: 7rem" pSortableColumn="status">Status
+								<p-sortIcon field="status"></p-sortIcon>
+							</th>
+						</tr>
+					</ng-template>
+					<ng-template pTemplate="body" let-petani>
+						<tr [pSelectableRow]="petani">
+							<td class="text-wrap">
+								<span class="p-column-title">Nama</span>
+								{{petani.nama}}
+							</td>
+							<td class="text-wrap">
+								<span class="p-column-title">NIK</span>
+								{{petani.nik}}
+							</td>
+							<td class="text-wrap">
+								<span class="p-column-title">Email</span>
+								{{petani.email}}
+							<td class="text-wrap">
+								<span class="p-column-title">Alamat</span>
+								{{petani.alamat}}
+							</td>
+							<td style="width: 9rem" class="text-wrap">
+								<span class="p-column-title">No Hp</span>
+								{{petani.noHp}}
+							</td>
+							<td style="width: 8rem;text-align: right;" class="text-wrap">
+								<span class="p-column-title">Penghasilan</span>
+								Rp {{petani.penghasilan}}
+							</td>
+							<td style="width: 8rem"  class="text-wrap">
+								<span class="p-column-title">Jenis Klaim</span>
+								<span class="image-text" style="margin-left: .5em;vertical-align: middle">{{petani.jenisKlaim}}</span>
+							</td>
+							<td style="width: 7rem" class="text-wrap">
+								<span class="p-column-title">Status</span>
+								<span *ngIf="petani.status === 'diproses'" [class]="'customer-badge status-' + petani.status" (click)="confirm(petani)">{{petani.status}}</span>
+								<span *ngIf="petani.status !== 'diproses'" [class]="'customer-badge status-' + petani.status" >{{petani.status}}</span>
+							</td>
+						</tr>
+					</ng-template>
+					<ng-template pTemplate="emptymessage">
+						<tr>
+							<td colspan="8">belum ada yang mendaftar.</td>
+						</tr>
+					</ng-template>
+				</p-table>
+			</div>
+		</div>
+	
+	</div>
+	
+</div>
+
+<p-dialog header="Konfirmasi Status Klaim" [(visible)]="display" [style]="{width: '450px'}" modal="true" styleClass="p-fluid">
+	<div class="p-field w-full">
+		<label for="state">Status</label>
+		<p-dropdown #statusInput [options]="status" placeholder="Pilih Status" optionLabel="name"></p-dropdown>
+	</div>
+	<div class="p-field w-full">
+    <p-button styleClass="p-float-right p-button-success" label="Validasi" (onClick)="changeStatus(statusInput.value)"></p-button>
+	</div>
+</p-dialog>

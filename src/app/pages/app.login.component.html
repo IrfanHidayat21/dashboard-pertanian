@@ -1,0 +1,19 @@
+<div class="login-body">
+    <div class="login-wrapper">
+        <div class="login-panel">
+            <img src="assets/layout/images/logo-dark.svg" class="logo" alt="diamond-layout" />
+
+            <div class="login-form">
+                <h2>Silahkan Login</h2>
+                <input pInputText #emailInput type="email" id="email" placeholder="Email" />
+                <input pPassword #pwInput type="password" id="password" placeholder="Password" />
+                <p class="mt-1" style="color: red">{{errorMsg}}</p>
+                <button pButton label="LOG IN" type="button" (click)="onLoginButtonClicked(emailInput.value, pwInput.value)"></button>
+            </div>
+
+            <p>Dashboard App V.0.0.1</p>
+        </div>
+        <div class="login-image">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,114 @@
+{
+    "data": [
+    {
+      "id": 1000,
+      "nama": "James Butt",
+      "nik": "1234567890987",
+      "email": "james@petani.com",
+      "alamat": "Jalan Satu a",
+      "noHp": "082134567890",
+      "penghasilan": 10000000,
+      "jenisKlaim": "Klaim A",
+      "status": "ditolak"
+    },
+    {
+      "id": 1001,
+      "nama": "Josephine Darakjy",
+      "nik": "1234567890987",
+      "email": "james1@petani.com",
+      "alamat": "Jalan Satu a",
+      "noHp": "082134567890",
+      "penghasilan": 1000000,
+      "jenisKlaim": "Klaim C",
+      "status": "diterima"
+    },
+    {
+      "id": 1002,
+      "nama": "Art Venere",
+      "nik": "1234567890987",
+      "email": "james2@petani.com",
+      "alamat": "Jalan Satu a",
+      "noHp": "082134567890",
+      "penghasilan": 2000000,
+      "jenisKlaim": "Klaim A",
+      "status": "diterima"
+    },
+    {
+      "id": 1003,
+      "nama": "Lenna Paprocki",
+      "nik": "1234567890987",
+      "email": "james3@petani.com",
+      "alamat": "Jalan Satu a",
+      "noHp": "082134567890",
+      "penghasilan": 20000000,
+      "jenisKlaim": "Klaim C",
+      "status": "ditolak"
+    },
+    {
+      "id": 1004,
+      "nama": "Donette Foller",
+      "nik": "1234567890987",
+      "email": "james4@petani.com",
+      "alamat": "Jalan Satu a",
+      "noHp": "082134567890",
+      "penghasilan": 5000000,
+      "jenisKlaim": "Klaim C",
+      "status": "diterima"
+    },
+    {
+      "id": 1005,
+      "nama": "Simona Morasca",
+      "nik": "1234567890987",
+      "email": "james5@petani.com",
+      "alamat": "Jalan Satu a",
+      "noHp": "082134567890",
+      "penghasilan": 11000000,
+      "jenisKlaim": "Klaim B",
+      "status": "ditolak"
+    },
+    {
+      "id": 1006,
+      "nama": "Mitsue Tollner",
+      "nik": "1234567890987",
+      "email": "james6@petani.com",
+      "alamat": "Jalan Satu a",
+      "noHp": "082134567890",
+      "penghasilan": 15000000,
+      "jenisKlaim": "Klaim B",
+      "status": "ditolak"
+    },
+    {
+      "id": 1007,
+      "nama": "Leota Dilliard",
+      "nik": "1234567890987",
+      "email": "james7@petani.com",
+      "alamat": "Jalan Satu a",
+      "noHp": "082134567890",
+      "penghasilan": 87000000,
+      "jenisKlaim": "Klaim A",
+      "status": "ditolak"
+    },
+    {
+      "id": 1008,
+      "nama": "Nico Robin",
+      "nik": "1234567890987",
+      "email": "james8@petani.com",
+      "alamat": "Jalan Satu a",
+      "noHp": "082134567890",
+      "penghasilan": 6000000,
+      "jenisKlaim": "Klaim C",
+      "status": "diterima"
+    },
+    {
+      "id": 1009,
+      "nama": "Kris Marrier",
+      "nik": "1234567890987",
+      "email": "james9@petani.com",
+      "alamat": "Jalan Satu a",
+      "noHp": "082134567890",
+      "penghasilan": 7000000,
+      "jenisKlaim": "Klaim B",
+      "status": "diterima"
+    }
+  ]
+}
